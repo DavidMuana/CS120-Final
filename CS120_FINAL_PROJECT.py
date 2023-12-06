@@ -143,11 +143,11 @@ def showDescription(self):
     description_screen.show()
 
 class Player:
-    def __init__(self, image_path, initial_position, keys):
+    def __init__(self, image_path, initial_position, keys, speed=5):
         self.image = pygame.image.load(image_path)
         self.rect = self.image.get_rect()
         self.rect.topleft = initial_position
-        self.speed = 5
+        self.speed = speed  
         self.keys = keys
         self.screen_width = 650
         self.screen_height = 480
@@ -358,8 +358,8 @@ def startGame(screen, backgroundImage, coinsGroup):
     pygame.mixer.music.load("GAME.WAV")
     pygame.mixer.music.play(-1)
 
-    bluePlayer = Player("BLUE.png", (100, 100), (pygame.K_w, pygame.K_s, pygame.K_a, pygame.K_d))
-    redPlayer = Player("RED.png", (500, 100), (pygame.K_UP, pygame.K_DOWN, pygame.K_LEFT, pygame.K_RIGHT))
+    bluePlayer = Player("BLUE.png", (100, 100), (pygame.K_w, pygame.K_s, pygame.K_a, pygame.K_d), speed=3)
+    redPlayer = Player("RED.png", (500, 100), (pygame.K_UP, pygame.K_DOWN, pygame.K_LEFT, pygame.K_RIGHT), speed=3)
 
     blueCollectedCoins = 0
     redCollectedCoins = 0
@@ -367,7 +367,7 @@ def startGame(screen, backgroundImage, coinsGroup):
     clock = pygame.time.Clock()
     timerFont = pygame.font.Font(None, 36)
 
-    gameTimer = 1110
+    gameTimer = 300
 
     num_silver_coins = random.randint(1, 5)
 
@@ -482,7 +482,7 @@ def startGame(screen, backgroundImage, coinsGroup):
         pygame.display.flip()
         clock.tick(30)
     
-        gameTimer -= 1
+        gameTimer -= 0.5
     
         if bluePlayer.collected_chains > 0:
             bluePlayer.chain_speed_boost -= 0.01
