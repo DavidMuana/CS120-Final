@@ -6,7 +6,7 @@ The original goal that I had on my game doc was that I would have a red and a bl
 I would have also planned on having boosters like x2 points, guns, etc..
 I could only get to work on having one colored coin and have it based on whoever can collect the most coins before the time ends or when all the coins have been collected. I also got a speed booster alongside a silver coin that gave you 2 points to your score.
 
-The instructions can be found when you click on the 'Description' button in the starting menu. What is not stated in that screen is that if you bump into your opposition close enough to the boundaries, you could potentially get them stuck and have the coins all to yourself.
+The instructions can be found when you click on the 'Description' button in the starting menu. What is not stated in that screen is that if you bump into your opposition close enough to the boundaries, you could potentially get them stuck and have the coins all to yourself. Also the big silver coins are worth 2 points. 
 
 I used the basic import random for the computer to generate a random int which dictated how much boosters and coins would be spawned on the map. I also had a sprite for basically everything you see on the screen. 
 
